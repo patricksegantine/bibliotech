@@ -1,6 +1,6 @@
 ﻿namespace Bibliotech.Api.Domain.Entities;
 
-public class Autor
+public class Autor : Entity
 {
     public string Nome { get; set; }
     public string Email { get; set; }

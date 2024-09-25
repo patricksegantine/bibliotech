@@ -1,6 +1,6 @@
 ﻿namespace Bibliotech.Api.Domain.Entities;
 
-public class Usuario
+public class Usuario : Entity
 {
     public string Nome { get; set; }
     public string Cpf { get; set; }
