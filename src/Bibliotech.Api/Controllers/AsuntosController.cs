@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Bibliotech.Api.Infrastrucuture.Persistence;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Bibliotech.Api.Controllers;
 
@@ -6,13 +8,18 @@ namespace Bibliotech.Api.Controllers;
 [Route("api/assuntos")]
 public class AsuntosController : ControllerBase
 {
-    [HttpGet("buscar")]
-    public IActionResult Buscar(string nomeAutor)
+    private readonly BibliotechContext _bibliotechContext;
+
+    public AsuntosController(BibliotechContext bibliotechContext)
     {
-        // TODO: acessar o banco de dados e pesquisar
+        _bibliotechContext = bibliotechContext;
+    }
 
-        
+    [HttpGet("buscar")]
+    public async Task<IActionResult> Buscar([FromQuery] string descricao)
+    {
+        var assuntos = await _bibliotechContext.Assuntos.ToListAsync();
 
-        return Ok();
+        return Ok(assuntos);
     }
 }

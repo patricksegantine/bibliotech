@@ -22,20 +22,20 @@ public class LivrosController : ControllerBase
     {
         var autores = new List<Autor>
         {
-            new Autor { Id = 1, Nome = "Delia Owens", Email = "delia@owens.com", DataNascimento = new DateTime(1949, 4, 4), Status = "Ativo" },
-            new Autor { Id = 2, Nome = "Colleen Hoover", Email = "colleen@hoover.com", DataNascimento = new DateTime(1979, 12, 11), Status = "Ativo" },
-            new Autor { Id = 3, Nome = "Michelle Obama", Email = "michelle@obama.com", DataNascimento = new DateTime(1964, 1, 17), Status = "Ativo" },
-            new Autor { Id = 4, Nome = "James Clear", Email = "james@clear.com", DataNascimento = new DateTime(1986, 5, 22), Status = "Ativo" },
-            new Autor { Id = 5, Nome = "Taylor Jenkins Reid", Email = "taylor@jenkins.com", DataNascimento = new DateTime(1983, 12, 20), Status = "Ativo" },
+            new Autor { Id = 1, Nome = "Delia Owens", Email = "delia@owens.com", DataNascimento = new DateTime(1949, 4, 4), Status = Domain.Enums.Status.Ativo },
+            new Autor { Id = 2, Nome = "Colleen Hoover", Email = "colleen@hoover.com", DataNascimento = new DateTime(1979, 12, 11), Status = Domain.Enums.Status.Ativo },
+            new Autor { Id = 3, Nome = "Michelle Obama", Email = "michelle@obama.com", DataNascimento = new DateTime(1964, 1, 17), Status = Domain.Enums.Status.Ativo },
+            new Autor { Id = 4, Nome = "James Clear", Email = "james@clear.com", DataNascimento = new DateTime(1986, 5, 22), Status = Domain.Enums.Status.Ativo },
+            new Autor { Id = 5, Nome = "Taylor Jenkins Reid", Email = "taylor@jenkins.com", DataNascimento = new DateTime(1983, 12, 20), Status = Domain.Enums.Status.Ativo },
         };
 
         var assuntos = new List<Assunto>
         {
-            new Assunto { Id = 1, Descricao = "Ficção", Status = "Ativo" },
-            new Assunto { Id = 2, Descricao = "Biografia", Status = "Ativo" },
-            new Assunto { Id = 3, Descricao = "Autoajuda", Status = "Ativo" },
-            new Assunto { Id = 4, Descricao = "Romance", Status = "Ativo" },
-            new Assunto { Id = 5, Descricao = "História", Status = "Ativo" },
+            new Assunto { Id = 1, Descricao = "Ficção", Status = Domain.Enums.Status.Ativo },
+            new Assunto { Id = 2, Descricao = "Biografia", Status = Domain.Enums.Status.Ativo },
+            new Assunto { Id = 3, Descricao = "Autoajuda", Status = Domain.Enums.Status.Ativo },
+            new Assunto { Id = 4, Descricao = "Romance", Status = Domain.Enums.Status.Ativo },
+            new Assunto { Id = 5, Descricao = "História", Status = Domain.Enums.Status.Ativo },
         };
 
         var livros = new List<Livro>

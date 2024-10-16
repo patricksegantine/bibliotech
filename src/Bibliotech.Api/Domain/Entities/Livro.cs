@@ -1,4 +1,6 @@
-﻿namespace Bibliotech.Api.Domain.Entities;
+﻿using Bibliotech.Api.Domain.Enums;
+
+namespace Bibliotech.Api.Domain.Entities;
 
 public class Livro : Entity
 {
@@ -8,6 +10,7 @@ public class Livro : Entity
     public int AnoPublicacao { get; set; }
     public int AssuntoId { get; set; }
     public int AutorId { get; set; }
+    public Status Status { get; set; }
 
 
     // ORM EF: Propriedades de Navegação

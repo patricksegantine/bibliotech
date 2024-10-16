@@ -1,4 +1,6 @@
-﻿namespace Bibliotech.Api.Domain.Entities;
+﻿using Bibliotech.Api.Domain.Enums;
+
+namespace Bibliotech.Api.Domain.Entities;
 
 public class Usuario : Entity
 {
@@ -6,10 +8,10 @@ public class Usuario : Entity
     public string Cpf { get; set; }
     public DateTime DataNascimento { get; set; }
     public string Email { get; set; }
-    public string Status { get; private set; }
+    public Status Status { get; private set; }
     public string Permissao { get; private set; }
 
-    public void UpdateStatus(string status)
+    public void UpdateStatus(Status status)
     {
         Status = status;
     }
