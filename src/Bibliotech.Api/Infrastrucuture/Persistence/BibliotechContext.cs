@@ -9,16 +9,24 @@ public class BibliotechContext : DbContext
 {
     public DbSet<Assunto> Assuntos { get; set; }
     public DbSet<Autor> Autores { get; set; }
-    //public DbSet<Livro> Livros { get; set; }
+    public DbSet<Livro> Livros { get; set; }
     public DbSet<Usuario> Usuarios { get; set; }
 
     public BibliotechContext(DbContextOptions<BibliotechContext> options) : base(options) { }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        optionsBuilder
+            .LogTo(Console.WriteLine)
+            .EnableSensitiveDataLogging()
+            .EnableDetailedErrors();
+    }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfiguration(new AssuntoConfiguration());
         modelBuilder.ApplyConfiguration(new AutorConfiguration());
-        //modelBuilder.ApplyConfiguration(new LivroConfiguration());
+        modelBuilder.ApplyConfiguration(new LivroConfiguration());
         modelBuilder.ApplyConfiguration(new UsuarioConfiguration());
 
         // Configurar todas as propriedades DateTime para serem UTC
