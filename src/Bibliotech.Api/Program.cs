@@ -1,3 +1,4 @@
+using Bibliotech.Api.Application.Usecases.Assuntos;
 using Bibliotech.Api.Infrastrucuture.Persistence;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,6 +10,9 @@ builder.Services.AddDbContext<BibliotechContext>(options =>
             options.UseNpgsql(builder.Configuration.GetConnectionString("Postgres")));
 
 builder.Services.AddControllers();
+
+builder.Services.AddScoped<BuscarAssuntoUsecase>();
+builder.Services.AddScoped<CriarAssuntoUsecase>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

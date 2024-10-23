@@ -1,6 +1,7 @@
 ﻿using Bibliotech.Api.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Bibliotech.Api.Infrastrucuture.Persistence.Configurations;
 
@@ -13,7 +14,9 @@ public class AssuntoConfiguration : IEntityTypeConfiguration<Assunto>
 
         builder.Property(a => a.Id)
             .HasColumnName("Id")
-            .IsRequired();
+            .HasColumnType("integer")
+            .IsRequired()
+            .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
         builder.Property(e => e.Descricao)
             .IsRequired()
